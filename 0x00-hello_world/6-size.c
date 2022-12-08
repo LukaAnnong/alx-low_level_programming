@@ -3,11 +3,11 @@
 /**
  *main-This is the main fuction description
  *
- *Return: 0 for succesful exit
+ * Return: 0 for succesful exit
  */
 
 int main(void)
-{	
+{
 	int a;
 	long int b;
 	long long int c;
