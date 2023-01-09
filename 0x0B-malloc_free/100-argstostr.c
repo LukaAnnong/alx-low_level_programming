@@ -3,12 +3,11 @@
 /**
  * argstostr - a function that concatenates
  * all the arguments
- *
  * @ac: argument counter
  *  @av: argument holder
  *
  *  Return: a pointer to a new string
- *  	 or NULL if it fails
+ *  or NULL if it fails
  */
 
 char *argstostr(int ac, char **av)
@@ -44,6 +43,5 @@ char *argstostr(int ac, char **av)
 		k++;
 	}
 	str[k] = '\0';
-
 	return (str);
 }
