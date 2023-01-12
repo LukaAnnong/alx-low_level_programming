@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 #define ERR_MSG "Error"
 
 /**
@@ -9,7 +10,8 @@
  * @argv: args
  * Return: int
  */
-int is_digit(char *s)
+i
+nt is_digit(char *s)
 {
 	int i = 0;
 	
