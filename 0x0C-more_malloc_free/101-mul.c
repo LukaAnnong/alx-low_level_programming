@@ -10,8 +10,8 @@
  * @argv: args
  * Return: int
  */
-i
-nt is_digit(char *s)
+
+int is_digit(char *s)
 {
 	int i = 0;
 	
