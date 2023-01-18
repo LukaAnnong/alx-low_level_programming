@@ -1,16 +1,15 @@
 #include "3-calc.h"
 
 /**
- * get_op_func - get ops function pointer of type char array
- * that accepts two inputs of int data type
- * @s: a character pointer pointing to a symbol from the program argument
+ * get_op_func - selects the correct function to perform
+ * the operation asked by the user.
+ * @s: The operator passed as argument.
  *
- * Return: one of the operator functions to perform calculations
+ * Return: A pointer to the function that corresponding
+ * to the operator given as a parameter.
  */
-
 int (*get_op_func(char *s))(int, int)
 {
-	/* struct opts of struct op_t */
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
