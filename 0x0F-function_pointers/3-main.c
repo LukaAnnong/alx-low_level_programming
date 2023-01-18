@@ -1,38 +1,44 @@
-#include "3-calc.h"
+#include "function_pointers.h"
+#include <stdlib.h>
 #include <stdio.h>
-#include <string.h> /*for atoi*/
-#include <stdlib.h> /*for exit*/
+#include "3-calc.h
 
 /**
- * main - Program Entry
- * @argc: argument counter
- * @argv: argument vector
+ *  main - Prints the result of simple operations.
+ *  @argc: The number of arguments supplied to the program.
+ *  @argv: An array of pointers to the arguments.
  *
- * Return: 0-on success
+ *  Return: Always 0.
  */
-
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int num1, num2;
-	char *operator;
+	char *op;
 
-	/* Error if arguments are not 4 with the executable */
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]); /*if argument is string convert to number*/
-	num2 = atoi(argv[3]); /* as stated above */
-	operator = argv[2];
+	num1 = atoi(argv[1]);
+	op = argv[2];
+	num2 = atoi(argv[3]);
 
-	/* Error if operator is not null or a 2d array '\*' */
-	if (get_op_func(operator) == NULL || operator[1] != '\0')
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	printf("%d\n", get_op_func(operator)(num1, num2));
+	if ((*op == '/' && num2 == 0) ||
+			(*op == '%' && num2 == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d\n", get_op_func(op)(num1, num2));
+
+	return (0);
 }
